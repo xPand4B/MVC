@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', '| Test')
+
 @section('content')
-    Privacy Policy
+    Test Page
 @endsection

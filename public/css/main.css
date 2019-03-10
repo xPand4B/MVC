@@ -1,3 +1,19 @@
+/*!
+=========================================================
+* xPand4B/Portfolio - v1.0.0
+=========================================================
+
+* Copyright 2019 Eric Heinzl (https://www.xpand4b.de)
+
+* Designed by www.xpand4b.de
+* Coded by www.xpand4b.de
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
 @import '0-helper/_helper.css';
 
 @import '1-layout/_layout.css';
@@ -9,3 +25,7 @@
 @import '4-modules/_modules.css';
 
 @import '5-plugins/_plugins.css';
+
+*{
+    background-color: gray;
+}

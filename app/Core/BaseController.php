@@ -5,4 +5,11 @@
  * @copyright 2019 Eric Heinzl
  */
 
-header('Location: public/index.php');
+namespace App\Core;
+
+use App\Core\ViewLoader;
+
+class BaseController
+{
+    use ViewLoader;
+}
