@@ -21,10 +21,8 @@ class EnvironmentVariables
      * 
      * @param string $environmentPath
      * @param string $environmentFile
-     * 
-     * @return void
      */
-    public static function load($environmentPath, $environmentFile): void
+    public static function load($environmentPath, $environmentFile)
     {
         try{
             $dotenv = Dotenv::create($environmentPath, $environmentFile);

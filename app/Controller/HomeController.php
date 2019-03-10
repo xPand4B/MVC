@@ -7,9 +7,9 @@
 
 namespace App\Controller;
 
-use App\Core\BaseController;
+use App\Core\Controller;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
 
     /**
