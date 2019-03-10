@@ -1,5 +1,5 @@
 # xPand Portfolio
-This application should represent my way as a web developer.
+This application should represent my way as a (web) developer.
 
 My name is Eric, I'm from germany, 20 years old and an enthusiastic developer/programmer.
 
@@ -7,22 +7,41 @@ My name is Eric, I'm from germany, 20 years old and an enthusiastic developer/pr
 - **ToDo**: <https://github.com/xPand4B/Portfolio/blob/master/todo.md>
 
 
-# Table of Content
+
+## Table of Content
+* [Repositories](#repositories)
 * [Used Packages](#used-packages)
     * [General Packages](#general-packages)
     * [Composer Packages](#composer-packages)
 
 
-# Used Packages
 
-## General Packages
- Name               | Version   | Link
---------------------|-----------|------------------------------------------
+## Repositories
+Name                | Link
+--------------------|-------------------------------------------
+BKR-Verleih         | https://github.com/xPand4B/BKR-Verleih
+SimpleMVC           | https://github.com/xPand4B/SimpleMVC
+Laravel-Blog        | https://github.com/xPand4B/Laravel-Blog
+Symfony-Blog        | https://github.com/xPand4B/Symfony-Blog
+MiPa-Pool           | Private Repository
+SQL-Aufgaben        | https://github.com/xPand4B/SQL-Aufgaben
+Bash-Scripts        | https://github.com/xPand4B/Bash-Scripts
+BKR-NaturZoo        | https://github.com/xPand4B/BKR-NaturZoo
+Portfolio           | https://github.com/xPand4B/Portfolio
+
+
+
+## Used Packages
+
+
+### General Packages
+Name                | Version   | Link
+--------------------|-----------|-----------------------
 Nothing             | in        | here yet.
 
 
-## Composer packages
- Name               | Version   | Link
+### Composer packages
+Name                | Version   | Link
 --------------------|-----------|------------------------------------------
 jenssegers/blade    | ^1.1      |   https://github.com/jenssegers/blade
 vlucas/phpdotenv    | ^3.3      |   https://github.com/vlucas/phpdotenv
