@@ -1,9 +1,9 @@
 <?php
 /**
+ * @author Eric Heinzl <eric.heinzl@gmail.com>
  * @package xPand4B/Portfolio
- * @author  Eric Heinzl <eric.heinzl@gmail.com>
  * 
- * @source  https://medium.com/the-andela-way/how-to-build-a-basic-server-side-routing-system-in-php-e52e613cf241
+ * @source https://medium.com/the-andela-way/how-to-build-a-basic-server-side-routing-system-in-php-e52e613cf241
  */
 
 namespace App\Core\Routing;
@@ -70,7 +70,7 @@ class Router
             $this->invalidMethodHandler();
         }
         
-        $this->{strtolower($name)}[$this->formatRoute($route)] = $args;
+        $this->{\strtolower($name)}[$this->formatRoute($route)] = $args;
         
         $this->routeCount++;
     }
@@ -83,8 +83,8 @@ class Router
      */
     private function formatRoute($route)
     {
-        $route = str_replace($_SERVER['BASE'], '', $route);
-        $result = rtrim($route, '/');
+        $route = \str_replace($_SERVER['BASE'], '', $route);
+        $result = \rtrim($route, '/');
 
         if ($result === ''){
             return '/';
@@ -100,7 +100,7 @@ class Router
      */
     private function invalidMethodHandler(): void
     {
-        header("{$this->request->serverProtocol} 405 Method Not Allowed");
+        \header("{$this->request->serverProtocol} 405 Method Not Allowed");
     }
 
     /**
@@ -110,7 +110,7 @@ class Router
      */
     private function defaultRequestHandler():void
     {
-        header("{$this->request->serverProtocol} 404 Not Found");
+        \header("{$this->request->serverProtocol} 404 Not Found");
     }
 
     /**
@@ -120,7 +120,7 @@ class Router
      */
     function resolve(): void
     {
-        $methodDictionary = $this->{strtolower($this->request->requestMethod)};
+        $methodDictionary = $this->{\strtolower($this->request->requestMethod)};
         $formatedRoute    = $this->formatRoute($this->request->requestUri);
 
         if(!array_key_exists($formatedRoute, $methodDictionary)){
@@ -142,8 +142,8 @@ class Router
             return;
         }
 
-        $controller   = explode('@', $args)[0];
-        $method       = explode('@', $args)[1];
+        $controller   = \explode('@', $args)[0];
+        $method       = \explode('@', $args)[1];
 
         if(!file_exists(__DIR__.'/../../Controller/'.$controller.'.php')){
             echo "Controller doesn't exist >> 'App\Controller\\" . $controller."'";
@@ -158,7 +158,7 @@ class Router
             return;
         }
 
-        call_user_func_array([$controller, $method], [$this->request]);
+        \call_user_func_array([$controller, $method], [$this->request]);
     }
 
     /**

@@ -1,11 +1,10 @@
 <?php
 /**
+ * @author Eric Heinzl <eric.heinzl@gmail.com>
  * @package xPand4B/Portfolio
- * @author  Eric Heinzl <eric.heinzl@gmail.com>
  * 
- * @source  https://medium.com/the-andela-way/how-to-build-a-basic-server-side-routing-system-in-php-e52e613cf241
+ * @source https://medium.com/the-andela-way/how-to-build-a-basic-server-side-routing-system-in-php-e52e613cf241
  */
-
 namespace App\Core\Routing;
 
 class Request
@@ -32,7 +31,7 @@ class Request
             // echo '<br><br>' . $key .'<br>' . $this->{$this->toCamelCase($key)} = $value;
             $this->{$this->toCamelCase($key)} = $value;
         }
-        $_SERVER['BASE'] = str_replace('/public/', '', $_SERVER['BASE']);
+        $_SERVER['BASE'] = \str_replace('/public/', '', $_SERVER['BASE']);
     }
 
     /**
@@ -44,13 +43,13 @@ class Request
      */
     private function toCamelCase($string): string
     {
-        $result = strtolower($string);
+        $result = \strtolower($string);
 
-        preg_match_all('/_[a-z]/', $result, $matches);
+        \preg_match_all('/_[a-z]/', $result, $matches);
 
         foreach($matches[0] as $match){
-            $c = str_replace('_', '', strtoupper($match));
-            $result = str_replace($match, $c, $result);
+            $c = \str_replace('_', '', \strtoupper($match));
+            $result = \str_replace($match, $c, $result);
         }
         return $result;
     }
