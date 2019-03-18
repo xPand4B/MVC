@@ -9,12 +9,9 @@
 namespace App\Core\Routing;
 
 // use Symfony\Component\Debug\ExceptionHandler;
-use App\Core\ViewLoader;
 
 class Router
 {
-    use ViewLoader;
-
     /**
      * The request.
      *
@@ -130,7 +127,7 @@ class Router
 
         // View call?
         if(!strpos($methodDictionary[$formatedRoute], '@')){
-            $this->view($methodDictionary[$formatedRoute]);
+            view($methodDictionary[$formatedRoute]);
             die(1);
         }
 
