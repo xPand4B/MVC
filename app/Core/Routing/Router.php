@@ -113,9 +113,9 @@ class Router
     /**
      * Resolves a route.
      * 
-     * @return void
+     * @return mixed
      */
-    function resolve(): void
+    function resolve()
     {
         $methodDictionary = $this->{strtolower($this->request->requestMethod)};
         $formatedRoute    = $this->formatRoute($this->request->requestUri);
@@ -127,8 +127,7 @@ class Router
 
         // View call?
         if(!strpos($methodDictionary[$formatedRoute], '@')){
-            view($methodDictionary[$formatedRoute]);
-            die(1);
+            return view($methodDictionary[$formatedRoute]);
         }
 
         // Controller Call
