@@ -4,8 +4,11 @@
         @include('partials._head')
     </head>
     <body>
-        
-        @yield('content')
+        @include('partials._navigation')
+
+        <div class="content">
+            @yield('content')
+        </div>
 
         @include('partials._javascript')
     </body>
