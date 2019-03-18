@@ -6,11 +6,11 @@
  * @copyright 2019 Eric Heinzl
  */
 
-namespace App\Core;
+namespace App\Core\View;
 
 use Jenssegers\Blade\Blade;
 
-trait ViewLoader
+class ViewLoader
 {
     /**
      * Include view, depending on call inside specific controller.
@@ -20,11 +20,11 @@ trait ViewLoader
      * 
      * @return Jenssegers\Blade\Blade
      */
-    public static function view(string $view, array $data = [])
+    public static function Render(string $view, array $data = [])
     {
         $blade = new Blade(
-            __DIR__.'/../../resources/views',
-            __DIR__.'/../../storage/views'
+            __DIR__.'/../../../resources/views',
+            __DIR__.'/../../../storage/views'
         );
 
         echo $blade->render($view, $data);
