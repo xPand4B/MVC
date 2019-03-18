@@ -8,9 +8,7 @@
 
 namespace App\Core;
 
-use App\Core\ViewLoader;
-
 class Controller
 {
-    use ViewLoader;
+    //
 }
