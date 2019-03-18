@@ -1,0 +1,38 @@
+| app
+    | Controller
+        *.php
+    | Core
+        | Bootstrap
+            EnvironmentVariables.php
+        | Routing
+            Request.php
+            Router.php
+        Application.php
+        Controller.php
+        ViewLoader.php
+| bootstrap
+    app.php
+| public
+    | css
+        *.css
+    | img
+        *.png
+    | js
+        *.js
+    .htaccess
+    index.php
+| resources
+    | views
+        *.blade.php
+| routes
+    web.php
+| storage
+    | views
+        *.php
+| vendor
+    *.php
+.env
+.env.example
+.htaccess
+composer.json
+index.php

@@ -1,0 +1,90 @@
+| app
+    | core
+        |modal
+            modal.Login.html
+        first.start.php
+        footer.html
+        head.html
+        missing.tables.php
+        select.database.php
+        update.database.php
+    | error
+        404_NotFound.php
+    | includes
+        datenschutz.php
+        filme.php
+        home.php
+        impressum.php
+        kunden.php
+        mitarbeiter.php
+        profil.php
+        verleih.php
+    | partials
+        | filme
+            add.php
+            delete.php
+            details.php
+            show.all.php
+        | home
+            login.admin.php
+            login.customer.php
+        | kunden
+            add.php
+            details.php
+            show.all.php
+        | mitarbeiter
+            add.php
+            show.all.php
+        | verleih
+            add.selectCustomer.php
+            add.selectMovie.php
+            show.all.php
+    autoload.php
+    init.php
+| database
+    *.sql
+| img
+    *.png / *.jpg
+| scripts
+    | javascript
+        *.js
+    | php
+        | add
+            add.kunden.php
+            add.mitarbeiter.php
+            add.movies.php
+            add.verleihEnd.php
+            add.verleihStart.php
+        | delete
+            delete.customer.php
+            delete.movie.php
+        | edit
+            edit.customer.php
+        | login
+            login.php
+            logout.php
+        | search
+            search.customer.php
+        Database.php
+        Page.php
+        Topnav.php
+| styles
+    | 0-helpers
+        *.css
+    | 1-plugins
+        *.css
+    | 2-base
+        *.css
+    | 3-layout
+        *.css
+    | 4-modules
+        *.css
+    | 5-templates
+        *.css
+    main.css
+.htaccess
+CHANGE-LOG.md
+config.example.php
+config.php
+index.php
+README.md

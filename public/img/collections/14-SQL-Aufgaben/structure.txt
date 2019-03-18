@@ -1,0 +1,40 @@
+| database
+    *.sql
+| src
+    | app
+        | Core
+            App.php
+        | Database
+            ConnectionHandler.php
+            Database.php
+            QueryManager.php
+        | FileSystem
+            jsonData.php
+            jsonDecoder.php
+        | View
+            ViewLoader.php
+        .htaccess
+        init.php
+    | public
+        | css
+            *.css
+        | js
+            *.js
+        .htaccess
+        index.php
+    | resources
+        | views
+            *.blade.php
+    | storage
+        | views
+            *.php
+    | vendor
+        *.php
+    composer.json
+.env
+.env.sample
+.htaccess
+exercises.json
+exercises.json.clean
+exercises.json.sample
+index.php

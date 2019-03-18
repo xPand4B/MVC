@@ -16,7 +16,16 @@ return [
     | the title, headline/breadcrumb, etc.
     |
     */
+    
     'home' => [
-        'welcome' => 'Willkommen'
+        'title' => 'Homepage',
+    ],
+
+    'imprint' => [
+        'title' => 'Imprint',
+    ],
+
+    'privacy-policy' => [
+        'title' => 'Privacy Policy'
     ]
 ];

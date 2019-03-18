@@ -1,0 +1,43 @@
+| Database
+    Database.cs
+    MySqlConnector.cs
+| Hashing
+    | Hasher
+        SHA256Hasher.cs
+    HashManager.cs
+| Models
+    Address.cs
+    Animal.cs
+    Building.cs
+    Config.cs
+    Enclosure.cs
+    EntityBase.cs
+    Food.cs
+    Foodplan.cs
+    Guardian.cs
+    Log.cs
+    Supplier.cs
+    Territory.cs
+| Queries
+    | Core
+        | Repositories
+            GenericRepository.cs
+            IRepository.cs
+    | Repositories
+        AddressRepository.cs
+        AnimalRepository.cs
+        BuildingRepository.cs
+        ConfigRepository.cs
+        EnclosureRepository.cs
+        FoodRepository.cs
+        FoodplanRepository.cs
+        GuardianRepository.cs
+        LogRepository.cs
+        SpecialRepository.cs
+        SupplierRepository.cs
+        TerritoryRepository.cs
+        ZooRepository.cs
+| View
+    *Form.cs
+App.config
+Programm.cs
