@@ -10,9 +10,23 @@ use App\Core\View\ViewLoader;
 use App\Core\Translation\Translator;
 
 if(! \function_exists('route')){
-    function route(string $name, array $parameters = [])
-    {
 
+    /**
+     * Route to the given url.
+     * 
+     * @param string $name
+     * 
+     * @return string
+     */
+    function route(string $name = null)
+    {
+        if(empty($name) || is_null($name)){
+            return;
+        }
+
+        $newRoute = $_SERVER['BASE'] . $name;
+
+        return $newRoute;
     }
 }
 
@@ -25,12 +39,12 @@ if(! \function_exists('trans')){
      *
      * @return string
      */
-    function trans(string $message = null): string
+    function trans(string $message)
     {
-        if(is_null($message)){
-            return $message;
+        if(is_null($message) || empty($message)){
+            return "";
         }
-
+        
         return Translator::GetTranslation($message);
     }
 }
@@ -39,6 +53,7 @@ if(! \function_exists('view')){
     /**
      * Include view, depending on call inside specific controller.
      * 
+     * @method App\Core\View\ViewLoader::Render
      * @param string  $view [View Name]
      * @param array $data [Optional: Data to parse inside view]
      * 
