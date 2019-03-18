@@ -31,18 +31,18 @@ class TranslationReader
         }
 
         // Split input into array
-        $data = \explode('.', $name);
+        $data = explode('.', $name);
 
         // Get Translation Lines based of the
         $transFile  = self::$lang.'en/'.$data[0].'.php';
         $transLines = require $transFile;
 
         // Re-index array
-        $data = \array_splice($data, 1, \sizeof($data) - 1);
+        $data = array_splice($data, 1, sizeof($data) - 1);
         
         $tmp = $transLines[$data[0]];
 
-        for($i = 1; $i < \sizeof($data); ++$i){
+        for($i = 1; $i < sizeof($data); ++$i){
             $tmp = $tmp[$data[$i]];
         }
         

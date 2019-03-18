@@ -9,7 +9,7 @@
 use App\Core\View\ViewLoader;
 use App\Core\Translation\Translator;
 
-if(! \function_exists('route')){
+if(! function_exists('route')){
 
     /**
      * Route to the given url.
@@ -30,7 +30,7 @@ if(! \function_exists('route')){
     }
 }
 
-if(! \function_exists('trans')){
+if(! function_exists('trans')){
     /**
      * Translate the given message.
      *
@@ -49,7 +49,7 @@ if(! \function_exists('trans')){
     }
 }
 
-if(! \function_exists('view')){
+if(! function_exists('view')){
     /**
      * Include view, depending on call inside specific controller.
      * 

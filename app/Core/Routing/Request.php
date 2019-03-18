@@ -31,7 +31,7 @@ class Request
             // echo '<br><br>' . $key .'<br>' . $this->{$this->toCamelCase($key)} = $value;
             $this->{$this->toCamelCase($key)} = $value;
         }
-        $_SERVER['BASE'] = \str_replace('/public/', '', $_SERVER['BASE']);
+        $_SERVER['BASE'] = str_replace('/public/', '', $_SERVER['BASE']);
     }
 
     /**
@@ -43,13 +43,13 @@ class Request
      */
     private function toCamelCase($string): string
     {
-        $result = \strtolower($string);
+        $result = strtolower($string);
 
-        \preg_match_all('/_[a-z]/', $result, $matches);
+        preg_match_all('/_[a-z]/', $result, $matches);
 
         foreach($matches[0] as $match){
-            $c = \str_replace('_', '', \strtoupper($match));
-            $result = \str_replace($match, $c, $result);
+            $c = str_replace('_', '', strtoupper($match));
+            $result = str_replace($match, $c, $result);
         }
         return $result;
     }
