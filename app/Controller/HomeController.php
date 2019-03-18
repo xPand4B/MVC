@@ -18,11 +18,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function index(): void
+    public function index()
     {
         echo '<br>'.__METHOD__.'<br>';
+
         
-        $this->view('pages.home');
+        return view('pages.home');
     }
 
     /**
@@ -30,10 +31,10 @@ class HomeController extends Controller
      * 
      * @return void
      */
-    public function imprint(): void
+    public function imprint()
     {
         echo '<br>'.__METHOD__.'<br>';
         
-        $this->view('pages.imprint');
+        return view('pages.imprint');
     }
 }
