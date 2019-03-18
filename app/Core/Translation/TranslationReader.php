@@ -24,9 +24,9 @@ class TranslationReader
      *
      * @return string
      */
-    protected static function SearchFor(string $name = null): string
+    protected static function SearchFor(string $name = "")
     {
-        if (is_null($name)){
+        if (empty($name)){
             return "";
         }
 
@@ -39,6 +39,7 @@ class TranslationReader
 
         // Re-index array
         $data = \array_splice($data, 1, \sizeof($data) - 1);
+        
         $tmp = $transLines[$data[0]];
 
         for($i = 1; $i < \sizeof($data); ++$i){

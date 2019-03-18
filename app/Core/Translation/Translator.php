@@ -18,7 +18,7 @@ class Translator extends TranslationReader
      *
      * @return string
      */
-    public static function GetTranslation(string $name = null): string
+    public static function GetTranslation(string $name)
     {
         return TranslationReader::SearchFor($name);
     }
