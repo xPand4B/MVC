@@ -47,7 +47,7 @@ class Application
      */
     public function __construct()
     {
-        $this->bootstrapApplication();
+        $this->bootstrapSelf();
     }
 
     /**
@@ -55,7 +55,7 @@ class Application
      *
      * @return void
      */
-    private function bootstrapApplication(): void
+    private function bootstrapSelf(): void
     {
         EnvironmentVariables::load($this->environmentPath, $this->environmentFile);
         $this->router = new Router(new Request);
@@ -66,7 +66,7 @@ class Application
      *
      * @return string
      */
-    public function version(): string
+    public static function version(): string
     {
         return static::VERSION;
     }
