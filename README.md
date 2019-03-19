@@ -8,13 +8,13 @@ Hey, my name is Eric, I'm from germany, 20 years old and an enthusiastic develop
 
 
 
-## Table of Content
+# Table of Content
 * [Repositories](#repositories)
 * [Used Packages](#used-packages)
 
 
 
-## Repositories
+# Repositories
 Name                | Link
 --------------------|--------------------------------------------------
 BKR-Verleih         | https://github.com/xPand4B/BKR-Verleih
@@ -29,7 +29,7 @@ Portfolio           | https://github.com/xPand4B/Portfolio
 
 
 
-## Used Packages
+# Used Packages
 Name                | Version   | Link
 --------------------|-----------|------------------------------------------
 jenssegers/blade    | ^1.1      |   https://github.com/jenssegers/blade
