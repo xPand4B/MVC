@@ -7,25 +7,20 @@
  */
 
 return [
+
     /*
     |--------------------------------------------------------------------------
-    | Page Language Lines
+    | Menu Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines contain all page specific content such as
-    | the title, headline/breadcrumb, etc.
+    | The following language lines contain descriptions for the top- and
+    | sidemenu as well as the footer.
     |
     */
     
-    'home' => [
-        'title' => 'Homepage',
+    'top' => [
+        'home'              => 'Startseite',
+        'imprint'           => 'Impressum',
+        'privacy-policy'    => 'Datenschutzerklärung',
     ],
-
-    'imprint' => [
-        'title' => 'Imprint',
-    ],
-
-    'privacy-policy' => [
-        'title' => 'Privacy Policy'
-    ]
 ];
