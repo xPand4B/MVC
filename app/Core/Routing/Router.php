@@ -8,8 +8,6 @@
 
 namespace App\Core\Routing;
 
-// use Symfony\Component\Debug\ExceptionHandler;
-
 class Router
 {
     /**
@@ -45,7 +43,6 @@ class Router
         $this->request = $request;
     }
 
-
     /**
      * This method is used for every class call.
 
@@ -67,7 +64,9 @@ class Router
             $this->invalidMethodHandler();
         }
         
-        $this->{strtolower($name)}[$this->formatRoute($route)] = $args;
+        $key = '/' . $_SERVER['LANG'] . $this->formatRoute($route);
+
+        $this->{strtolower($name)}[$key] = $args;
         
         $this->routeCount++;
     }
@@ -81,17 +80,22 @@ class Router
     private function formatRoute($route)
     {
         $route  = str_replace($_SERVER['BASE'], '', $route);
-        $result = rtrim($route, '/');
-
-        if ($result === ''){
+        
+        if ($route === ''){
             return '/';
         }
-
-        return $result;
+        
+        if($route == '/' . $_SERVER['LANG']){
+            $link =  $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . $_SERVER['BASE'].'/'.$_SERVER['LANG'].'/';
+            header('Location: ' . $link);
+            die(1);
+        }
+        
+        return $route;
     }
 
     /**
-     * If a request is invalid.
+     * If a request is invalid
      *
      * @return void
      */
@@ -120,6 +124,15 @@ class Router
         $methodDictionary = $this->{strtolower($this->request->requestMethod)};
         $formatedRoute    = $this->formatRoute($this->request->requestUri);
 
+        // echo '<br>MethodDictionary: ';
+        // print_r($methodDictionary);
+        // echo '<br>';
+        
+        // echo '<br>FormatedRoute: ';
+        // print_r($formatedRoute);
+        // echo '<br>';
+
+        // Check if route exists
         if(!array_key_exists($formatedRoute, $methodDictionary)){
             $this->defaultRequestHandler();
             return;

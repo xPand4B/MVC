@@ -33,8 +33,13 @@ class TranslationReader
         // Split input into array
         $data = explode('.', $name);
 
+        $transFile  = self::$lang . $_SERVER['LANG'] . '/' . $data[0].'.php';
+
+        if(!file_exists($transFile)){
+            $transFile  = self::$lang . config('app.locale').'/'.$data[0].'.php';
+        }
+
         // Get Translation Lines based of the
-        $transFile  = self::$lang.'en/'.$data[0].'.php';
         $transLines = require $transFile;
 
         // Re-index array

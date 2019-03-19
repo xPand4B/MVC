@@ -32,6 +32,26 @@ class Request
             $this->{$this->toCamelCase($key)} = $value;
         }
         $_SERVER['BASE'] = str_replace('/public/', '', $_SERVER['BASE']);
+        
+        // If no language is set and $_SERVER['REDIRECT_QUERY_STRING']) is not set
+        if(empty($_SERVER['REDIRECT_QUERY_STRING'])){
+            $link =  $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . $_SERVER['BASE'].'/'.config('app.locale');
+            header('Location: ' . $link);
+            die(1);
+        }
+
+        // Get Language from url
+        $tmp = str_replace('url=', '', $_SERVER['REDIRECT_QUERY_STRING']);
+        $_SERVER['LANG'] = explode('/', $tmp)[0];
+
+        // If no language is set, but $_SERVER['REDIRECT_QUERY_STRING']) is available
+        if(!in_array($_SERVER['LANG'], config("app.supported_locales"))){
+            // Create link to the requested site
+            $tmp  = str_replace('url='.$_SERVER['LANG'], '', $_SERVER['REDIRECT_QUERY_STRING']);
+            $link =  $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'] . $_SERVER['BASE'].'/'.config('app.locale').'/'.$_SERVER['LANG'];
+            header('Location: ' . $link);
+            die(1);
+        }
     }
 
     /**
