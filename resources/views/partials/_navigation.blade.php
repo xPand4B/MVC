@@ -2,21 +2,21 @@
     {{-- Homepage --}}
     <li>
         <a href="{{ route('/') }}">
-            {{ trans('pages.home.title') }}
+            {{ trans('navigation.top.home') }}
         </a>
     </li>
 
     {{-- Imprint Page --}}
     <li>
         <a href="{{ route('/imprint') }}">
-            {{ trans('pages.imprint.title') }}
+            {{ trans('navigation.top.imprint') }}
         </a>
     </li>
 
     {{-- Privacy Policy Page --}}
     <li>
         <a href="{{ route('/privacy-policy') }}">
-            {{ trans('pages.privacy-policy.title') }}
+            {{ trans('navigation.top.privacy-policy') }}
         </a>
     </li>
 </ul>
