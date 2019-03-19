@@ -19,7 +19,7 @@ class Application
      * 
      * @var string
      */
-    const VERSION = '1.0.0';
+    private const VERSION = '1.0.0';
 
     /**
      * The environment path.
@@ -57,16 +57,22 @@ class Application
      */
     private function bootstrapSelf(): void
     {
+        // If selected locale isn't an available locale.
+        if(!in_array(config("app.locale"), config("app.supported_locales"))){
+            echo "Some settings are messed up: Your 'app.locale' isn't available.";
+            die(1);
+        }
+
         EnvironmentVariables::load($this->environmentPath, $this->environmentFile);
         $this->router = new Router(new Request);
     }
 
     /**
-     * Get the version number of the application.
+     * Get the version number of the pplication.
      *
      * @return string
      */
-    public static function version(): string
+    public function version(): string
     {
         return static::VERSION;
     }
