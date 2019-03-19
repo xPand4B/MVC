@@ -6,11 +6,29 @@
  * @copyright 2019 Eric Heinzl
  */
 
-use App\Core\View\ViewLoader;
+use App\Core\Config\Config;
 use App\Core\Translation\Translator;
+use App\Core\View\ViewLoader;
+
+if(! function_exists('config')){
+    /**
+     * Get config data.
+     * 
+     * @param string $argument
+     * 
+     * @return mixed
+     */
+    function config(string $argument = null)
+    {
+        if(is_null($argument)){
+            return;
+        }
+
+        return Config::GetConfig($argument);
+    }
+}
 
 if(! function_exists('route')){
-
     /**
      * Route to the given url.
      * 
@@ -24,7 +42,7 @@ if(! function_exists('route')){
             return;
         }
 
-        $newRoute = $_SERVER['BASE'] . $name;
+        $newRoute = $_SERVER['BASE'].'/'.$_SERVER['LANG'].$name;
 
         return $newRoute;
     }
@@ -34,7 +52,8 @@ if(! function_exists('trans')){
     /**
      * Translate the given message.
      *
-     * @method App\Core\Translation\Translator::GetTranslation|string
+     * @method App\Core\Translation\Translator::GetTranslation
+     * 
      * @param string $message
      *
      * @return string
@@ -54,13 +73,14 @@ if(! function_exists('view')){
      * Include view, depending on call inside specific controller.
      * 
      * @method App\Core\View\ViewLoader::Render
-     * @param string  $view [View Name]
-     * @param array $data [Optional: Data to parse inside view]
+     * 
+     * @param string $view [View Name]
+     * @param array  $data [Optional: Data to parse inside view]
      * 
      * @return Jenssegers\Blade\Blade
      */
     function view(string $view, array $data = [])
     {
-        ViewLoader::Render($view, $data);
+        return ViewLoader::Render($view, $data);
     }
 }
