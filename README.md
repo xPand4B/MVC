@@ -1,4 +1,4 @@
-# xPand Portfolio
+# Eric H. - Portfolio
 This application should represent my way as a (web) developer.
 
 Hey, my name is Eric, I'm from germany, 20 years old and an enthusiastic developer/programmer.
