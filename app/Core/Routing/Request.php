@@ -21,7 +21,7 @@ class Request
      * Sets all keys in the global $_SERVER array as
      * properties of the Request class and assigns their values as well.
      *
-     * @uses App\Core\Routing\Router::toCamelCase
+     * @method string App\Core\Routing\Router::toCamelCase(string $string)
      * 
      * @return void
      */
@@ -61,7 +61,7 @@ class Request
      * 
      * @return string
      */
-    private function toCamelCase($string): string
+    private function toCamelCase(string $string): string
     {
         $result = strtolower($string);
 

@@ -13,7 +13,8 @@ class Translator extends TranslationReader
     /**
      * Get translation based of the name.
      *
-     * @method App\Core\Translation\TranslationReader::SearchFor()
+     * @method string App\Core\Translation\TranslationReader::SearchFor(string $name)
+     * 
      * @param string $name
      *
      * @return string

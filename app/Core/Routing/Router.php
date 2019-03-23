@@ -45,7 +45,7 @@ class Router
 
     /**
      * This method is used for every class call.
-
+     * 
      * Example:
      *      $router->GET('/some/route', 'someController@someMethod)
      *      $router->GET('/some/route', 'some.blade.template)

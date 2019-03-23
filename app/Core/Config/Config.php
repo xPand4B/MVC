@@ -13,7 +13,8 @@ class Config extends ConfigReader
     /**
      * Get the config based of the name.
      *
-     * @method App\Core\Config\ConfigReader::SearchFor()
+     * @method string App\Core\Config\ConfigReader::SearchFor(string $argument)
+     * 
      * @param string $name
      *
      * @return string
