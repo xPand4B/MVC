@@ -11,11 +11,11 @@ namespace App\Core\Translation;
 class TranslationReader
 {
     /**
-     * Language file directory
+     * Language resource directory.
      *
      * @var string
      */
-    private static $lang = __DIR__.'/../../../resources/lang/';
+    private static $lang = '/lang';
 
     /**
      * Search a Translation based on the selected language and $name.
@@ -33,10 +33,10 @@ class TranslationReader
         // Split input into array
         $data = explode('.', $name);
 
-        $transFile  = self::$lang . $_SERVER['LANG'] . '/' . $data[0].'.php';
+        $transFile  = resource_path(self::$lang) . '/' . $_SERVER['LANG'] . '/' . $data[0].'.php';
 
         if(!file_exists($transFile)){
-            $transFile  = self::$lang . config('app.locale').'/'.$data[0].'.php';
+            $transFile  = resource_path(self::$lang) . config('app.locale').'/'.$data[0].'.php';
         }
 
         // Get Translation Lines based of the

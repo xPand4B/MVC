@@ -26,7 +26,7 @@ class Application
      *
      * @var string
      */
-    private $environmentPath = __DIR__.'/../../';
+    private $environmentPath = '/';
 
     /**
      * The environment file to load during bootstrapping.
@@ -63,7 +63,11 @@ class Application
             die(1);
         }
 
-        EnvironmentVariables::load($this->environmentPath, $this->environmentFile);
+        EnvironmentVariables::load(
+            app_path($this->environmentPath),
+            $this->environmentFile
+        );
+        
         $this->router = new Router(new Request);
     }
 

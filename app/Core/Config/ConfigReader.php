@@ -11,11 +11,11 @@ namespace App\Core\Config;
 class ConfigReader
 {
     /**
-     * Config file directory
+     * Config file directory.
      *
      * @var string
      */
-    private static $dir = __DIR__.'/../../../config/';
+    private static $configDir = '/config';
 
     /**
      * Search a Config based on the $argument.
@@ -33,7 +33,7 @@ class ConfigReader
         // Split input into array
         $data = explode('.', $argument);
 
-        $configFile = self::$dir.'/'.$data[0].'.php';
+        $configFile = app_path(self::$configDir) . '/' . $data[0] . '.php';
 
         if(!file_exists($configFile)){
             return;

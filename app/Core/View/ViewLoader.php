@@ -23,8 +23,8 @@ class ViewLoader
     public static function Render(string $view, array $data = [])
     {
         $blade = new Blade(
-            __DIR__.'/../../../resources/views',
-            __DIR__.'/../../../storage/views'
+            resource_path('/views'),
+            storage_path('/views'),
         );
 
         echo $blade->render($view, $data);

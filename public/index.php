@@ -29,7 +29,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once app_path('/bootstrap/app.php');
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +43,4 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $route = $app->Router();
 
-require_once __DIR__.'/../routes/web.php';
+require_once app_path('/routes/web.php');
