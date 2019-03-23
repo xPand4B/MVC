@@ -196,10 +196,15 @@ if(! function_exists('view')){
      * @param string $view [View Name]
      * @param array  $data [Optional: Data to parse inside view]
      * 
-     * @return Jenssegers\Blade\Blade
+     * @return void
      */
-    function view(string $view, array $data = [])
+    function view(string $view = null, array $data = []): void
     {
-        return ViewLoader::Render($view, $data);
+        if(is_null($view) || empty($view)){
+            echo "<br>Something went wrong: You're view doesn't exist.";
+            die(1);
+        }
+
+        ViewLoader::Render($view, $data);
     }
 }
