@@ -34,13 +34,19 @@ if(! function_exists('collection_image')){
      * 
      * @return string
      */
-    function collection_image(string $collectionName = null, string $fileName = null): ?string
+    function collection_image(string $filePath = null): ?string
     {
-        if(is_null($collectionName) || is_null($fileName)){
+        if(is_null($filePath) || empty($filePath)){
             return null;
         }
 
-        return public_path() . '/img/collections/' . $collectionName . '/' . $fileName;
+        $imagePath = public_path() . '/img/collections/' . $filePath;
+
+        if(! file_exists($imagePath)){
+            return null;
+        }
+
+        return $imagePath;
     }
 }
 
