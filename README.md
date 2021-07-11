@@ -1,12 +1,7 @@
-# Eric H. - Portfolio
-This application should represent my way as a (web) developer.
-
-Hey, my name is Eric, I'm from germany, 20 years old and an enthusiastic developer/programmer.
+# MVC
 
 - **Github Repository**: <https://github.com/xPand4B/Portfolio>
 - **ToDo**: <https://github.com/xPand4B/Portfolio/blob/master/todo.md>
-
-
 
 # Table of Content
 * [Available Helper Methods](#available-helper-methods)
@@ -21,9 +16,6 @@ Hey, my name is Eric, I'm from germany, 20 years old and an enthusiastic develop
     * [Get translation for the given message](#get-translation-for-the-given-message)
     * [Get the current url](#get-the-current-url)
     * [Render View](#render-view)
-* [Repositories](#repositories)
-* [Used Packages](#used-packages)
-
 
 
 # Available Helper Methods
@@ -82,26 +74,3 @@ url(string $name = null, string $lang = null): string
 ```
 view(string $view, array $data = [])
 ```
-
-
-
-# Repositories
-Name                                                        | Description
-------------------------------------------------------------|--------------------------------------------------
-[Portfolio](https://github.com/xPand4B/Portfolio)           | This application should represent my way as a (web) developer.
-[BKR-NaturZoo](https://github.com/xPand4B/BKR-NaturZoo)     | Eine Software, um einen Zoo zu verwalten.
-[Bash-Scripts](https://github.com/xPand4B/Bash-Scripts)     | Usefull bash scripts.
-[SQL-Aufgaben](https://github.com/xPand4B/SQL-Aufgaben)     | Eine kleine Web-Anwendung, um seine SQL Aufgaben an einer Stelle zu verwalten.
-[MiPa-Pool](https://github.com/xPand4B/MiPa-Pool)           | Eine Webanwendung, um Essensbestellungen in der Mittagspause zu verwalten und kommunizieren.
-[Symfony-Blog](https://github.com/xPand4B/Symfony-Blog)     | Symfony Blog Test.
-[Laravel-Blog](https://github.com/xPand4B/Laravel-Blog)     | Laravel Blog Test.
-[SimpleMVC](https://github.com/xPand4B/SimpleMVC)           | In this project I'm trying to create a small and simple MVC based Web-App using PHP as well as composer packages.
-[BKR-Verleih](https://github.com/xPand4B/BKR-Verleih)       | This is a school project, where we should make a website for a fictional video-library company.
-
-
-
-# Used Packages
-Name                | Version   | Link
---------------------|-----------|------------------------------------------
-jenssegers/blade    | ^1.1      |   https://github.com/jenssegers/blade
-vlucas/phpdotenv    | ^3.3      |   https://github.com/vlucas/phpdotenv
